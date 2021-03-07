@@ -12,6 +12,8 @@ app.use(urlencoded({extended: true}));
 
 app.route('/').post((req, res) => {
     handle(req.body.text, req.body.sessionId).then(response => res.send(response))
+}).get((req, res) => {
+    res.send("It works")
 })
 
 app.listen(port, () => {
