@@ -79,6 +79,7 @@ function resolveBank(parts) {
 }
 
 async function confirm(payload) {
+    /*
     const account = await network.get("sterling/TransferAPIs/api/Spay/InterbankNameEnquiry?Referenceid=01&RequestType=01&Translocation=01&ToAccount=0037514051&destinationbankcode=000001",
         {
             headers: {
@@ -90,8 +91,10 @@ async function confirm(payload) {
                 "ipval": "0"
             }
         })
+    */
     const value = getVoucherValue(payload.voucher)
     console.log({payload})
+   
     if (value) {
         return `CON [Sandbox, no real money]\nPlease confirm that you're about to send NGN${value} to Prince Account (${payload.bank.name}) \n1. Confirm \n2. Cancel`
     } else {
@@ -100,6 +103,7 @@ async function confirm(payload) {
 }
 
 async function send(payload) {
+    /*
     const r = await network.post("sterling/accountapi/api/Spay/InterbankTransferReq", {
         "Referenceid": "0101",
         "RequestType": "01",
@@ -124,6 +128,7 @@ async function send(payload) {
             "ipval": "0"
         }
     })
+    */
     return "END " + r.data.data.ResponseText
 }
 
