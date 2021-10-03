@@ -129,7 +129,7 @@ async function send(payload) {
         }
     })
     */
-    return "END " + r.data.data.ResponseText
+    return "END [Sandbox, no real money]\n Your transaction is successful."
 }
 
 function getVoucherValue(code) {
